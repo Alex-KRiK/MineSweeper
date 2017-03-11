@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html"; charset="UTF-8" />
+        <title>Sample saper</title>
+    </head>
+    <style type="text/css">
+        
+        table
+        {
+            border: 2px solid black;
+            margin: auto;
+        }
+        div
+        {
+            text-align: center;
+        }
+       
+        td
+        {
+           border: 1px solid black; 
+        }
+        
+        img
+        {
+            vertical-align: bottom;
+        }
+        
+        .marked-cell
+        {
+            background: url('images/flag.jpg');
+        }
+               
+    </style>
+<body>
+    
+    <!-- Рисуем таблицу, она же является полем игры -->
+   
+   <br />
+   <br />
+    
+    
+        <table>
+            
+            <tr>
+                <td><a href="#" name=1 onClick="Move(0,0)" oncontextmenu="flag(0,0)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=2 onClick="Move(1,0)" oncontextmenu="flag(1,0)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=3 onClick="Move(2,0)" oncontextmenu="flag(2,0)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=4 onClick="Move(3,0)" oncontextmenu="flag(3,0)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=5 onClick="Move(4,0)" oncontextmenu="flag(4,0)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=6 onClick="Move(5,0)" oncontextmenu="flag(5,0)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=7 onClick="Move(6,0)" oncontextmenu="flag(6,0)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=8 onClick="Move(7,0)" oncontextmenu="flag(7,0)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=9 onClick="Move(8,0)" oncontextmenu="flag(8,0)"><img src="images/field.jpg" /></a></td>
+            </tr> 
+            
+            <tr>
+                <td><a href="#" name=10 onClick="Move(0,1)" oncontextmenu="flag(0,1)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=11 onClick="Move(1,1)" oncontextmenu="flag(1,1)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=12 onClick="Move(2,1)" oncontextmenu="flag(2,1)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=13 onClick="Move(3,1)" oncontextmenu="flag(3,1)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=14 onClick="Move(4,1)" oncontextmenu="flag(4,1)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=15 onClick="Move(5,1)" oncontextmenu="flag(5,1)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=16 onClick="Move(6,1)" oncontextmenu="flag(6,1)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=17 onClick="Move(7,1)" oncontextmenu="flag(7,1)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=18 onClick="Move(8,1)" oncontextmenu="flag(8,1)"><img src="images/field.jpg" /></a></td>
+            </tr>
+           
+            <tr>
+                <td><a href="#" name=19 onClick="Move(0,2)" oncontextmenu="flag(0,2)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=20 onClick="Move(1,2)" oncontextmenu="flag(1,2)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=21 onClick="Move(2,2)" oncontextmenu="flag(2,2)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=22 onClick="Move(3,2)" oncontextmenu="flag(3,2)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=23 onClick="Move(4,2)" oncontextmenu="flag(4,2)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=24 onClick="Move(5,2)" oncontextmenu="flag(5,2)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=25 onClick="Move(6,2)" oncontextmenu="flag(6,2)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=26 onClick="Move(7,2)" oncontextmenu="flag(7,2)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=27 onClick="Move(8,2)" oncontextmenu="flag(8,2)"><img src="images/field.jpg" /></a></td>
+            </tr>
+           
+            <tr>
+                <td><a href="#" name=28 onClick="Move(0,3)" oncontextmenu="flag(0,3)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=29 onClick="Move(1,3)" oncontextmenu="flag(1,3)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=30 onClick="Move(2,3)" oncontextmenu="flag(2,3)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=31 onClick="Move(3,3)" oncontextmenu="flag(3,3)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=32 onClick="Move(4,3)" oncontextmenu="flag(4,3)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=33 onClick="Move(5,3)" oncontextmenu="flag(5,3)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=34 onClick="Move(6,3)" oncontextmenu="flag(6,3)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=35 onClick="Move(7,3)" oncontextmenu="flag(7,3)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=36 onClick="Move(8,3)" oncontextmenu="flag(8,3)"><img src="images/field.jpg" /></a></td>
+            </tr>
+          
+            <tr>
+                <td><a href="#" name=37 onClick="Move(0,4)" oncontextmenu="flag(0,4)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=38 onClick="Move(1,4)" oncontextmenu="flag(1,4)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=39 onClick="Move(2,4)" oncontextmenu="flag(2,4)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=40 onClick="Move(3,4)" oncontextmenu="flag(3,4)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=41 onClick="Move(4,4)" oncontextmenu="flag(4,4)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=42 onClick="Move(5,4)" oncontextmenu="flag(5,4)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=43 onClick="Move(6,4)" oncontextmenu="flag(6,4)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=44 onClick="Move(7,4)" oncontextmenu="flag(7,4)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=45 onClick="Move(8,4)" oncontextmenu="flag(8,4)"><img src="images/field.jpg" /></a></td>
+            </tr>
+          
+            <tr>
+                <td><a href="#" name=46 onClick="Move(0,5)" oncontextmenu="flag(0,5)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=47 onClick="Move(1,5)" oncontextmenu="flag(1,5)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=48 onClick="Move(2,5)" oncontextmenu="flag(2,5)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=49 onClick="Move(3,5)" oncontextmenu="flag(3,5)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=50 onClick="Move(4,5)" oncontextmenu="flag(4,5)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=51 onClick="Move(5,5)" oncontextmenu="flag(5,5)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=52 onClick="Move(6,5)" oncontextmenu="flag(6,5)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=53 onClick="Move(7,5)" oncontextmenu="flag(7,5)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=54 onClick="Move(8,5)" oncontextmenu="flag(8,5)"><img src="images/field.jpg" /></a></td>
+            </tr>
+           
+            <tr>
+                <td><a href="#" name=55 onClick="Move(0,6)" oncontextmenu="flag(0,6)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=56 onClick="Move(1,6)" oncontextmenu="flag(1,6)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=57 onClick="Move(2,6)" oncontextmenu="flag(2,6)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=58 onClick="Move(3,6)" oncontextmenu="flag(3,6)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=59 onClick="Move(4,6)" oncontextmenu="flag(4,6)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=60 onClick="Move(5,6)" oncontextmenu="flag(5,6)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=61 onClick="Move(6,6)" oncontextmenu="flag(6,6)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=62 onClick="Move(7,6)" oncontextmenu="flag(7,6)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=63 onClick="Move(8,6)" oncontextmenu="flag(8,6)"><img src="images/field.jpg" /></a></td>
+            </tr>
+           
+            <tr>
+                <td><a href="#" name=64 onClick="Move(0,7)" oncontextmenu="flag(0,7)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=65 onClick="Move(1,7)" oncontextmenu="flag(1,7)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=66 onClick="Move(2,7)" oncontextmenu="flag(2,7)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=67 onClick="Move(3,7)" oncontextmenu="flag(3,7)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=68 onClick="Move(4,7)" oncontextmenu="flag(4,7)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=69 onClick="Move(5,7)" oncontextmenu="flag(5,7)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=70 onClick="Move(6,7)" oncontextmenu="flag(6,7)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=71 onClick="Move(7,7)" oncontextmenu="flag(7,7)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=72 onClick="Move(8,7)" oncontextmenu="flag(8,7)"><img src="images/field.jpg" /></a></td>
+            </tr>
+           
+            <tr>
+                <td><a href="#" name=73 onClick="Move(0,8)" oncontextmenu="flag(0,8)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=74 onClick="Move(1,8)" oncontextmenu="flag(1,8)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=75 onClick="Move(2,8)" oncontextmenu="flag(2,8)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=76 onClick="Move(3,8)" oncontextmenu="flag(3,8)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=77 onClick="Move(4,8)" oncontextmenu="flag(4,8)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=78 onClick="Move(5,8)" oncontextmenu="flag(5,8)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=79 onClick="Move(6,8)" oncontextmenu="flag(6,8)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=80 onClick="Move(7,8)" oncontextmenu="flag(7,8)"><img src="images/field.jpg" /></a></td>
+                <td><a href="#" name=81 onClick="Move(8,8)" oncontextmenu="flag(8,8)"><img src="images/field.jpg" /></a></td>
+            </tr>
+            
+        </table>
+        
+    <br />
+    <br />
+        
+                    <div>
+                    
+                        <input type="reset" onClick="NewGame()" value="New game" />    
+                    
+                    </div>
+    
+                  
+    
+    
+    <script>
+        
+                var massiv1 = new Array (
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0
+                                        );
+                
+                //Дополнительный массив для поиска пустых клеток (клеток без бомб)                     
+                var massiv2 = new Array (
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                         0, 0, 0, 0, 0, 0, 0, 0, 0
+                                        );
+                var Number = 0;
+                
+                //Вызов новой игры
+                NewGame();
+                
+                //Функция вызова новой игры
+                function NewGame()
+                {
+                    Number = 0;
+                    
+                    //очистка массивов
+                    for (var x = 0; x <= 8; x++)
+                        for (var y = 0; y <= 8; y++)
+                        {
+                            massiv1[9 * y + x] = 0;
+                            massiv2[9 * y + x] = 0;
+                        }
+                    
+                                        
+                    for (var x = 0; x <= 8; x++)
+                        for (var y = 0; y <= 8; y++)
+                        
+                            document.images[9 * y + x].src = "images/field.jpg";
+                                
+                                        
+                    //Расставляем мины на игровом поле
+                    var i = 1;
+                    
+                    while (i < 14)
+                    {
+                        x = Math.floor(Math.random()* 9);
+                        y = Math.floor(Math.random()* 9);
+                        
+                        if (massiv1[9 * y + x] == 100 ) continue;
+                        massiv1[9 * y + x] = 100;
+                        i++; 
+                    }
+                    
+                    
+                    //Расстанoвка цифр вокруг мин
+                    for (x = 0; x <= 8; x++)
+                    
+                        for (y = 0; y <= 8; y++)
+                        
+                            
+                            if (massiv1[9 * y + x] > 19)
+                            {
+                                
+                                if ( (x - 1 >= 0) && (x - 1 <= 8) )
+                                massiv1[9 * y + x - 1]++;
+                                      
+                                if ( (x - 1 >= 0) && (x - 1 <= 8) && (y - 1 >= 0) && (y - 1 <= 8) )
+                                massiv1[9 * (y - 1) + x - 1]++;
+                                
+                                if ( (y - 1 >= 0) && (y - 1 <= 8) )
+                                massiv1[9 * (y - 1) + x]++;
+                                
+                                if ( (x + 1 >= 0) && (x + 1 <= 8) && (y - 1 >= 0) && (y - 1 <= 8) )
+                                massiv1[9 * (y - 1) + x + 1]++;
+                                
+                                if ( (x + 1 >= 0) && (x + 1 <= 8) )
+                                massiv1[9 * y + x + 1]++;
+                                
+                                if ( (x + 1 >= 0) && (x + 1 <= 8) && (y + 1 >= 0) && (y + 1 <= 8) )
+                                massiv1[9 * (y + 1) + x + 1]++;
+                                
+                                if ( (y + 1 >= 0) && (y + 1 <= 8) )
+                                massiv1[9 * (y + 1) + x]++;
+                                
+                                if ( (x - 1 >= 0) && (x - 1 <= 8) && (y + 1 >= 0) && (y + 1 <= 8) )
+                                massiv1[9 * (y + 1) + x - 1]++;
+                                
+                                
+                            }
+                            
+                                                
+                    
+                    
+                }
+                                
+               
+               
+                //Функция прорисовки клеток
+                function Draw(x1, y1)
+                {
+                    
+                    if (massiv1[9 * y1 + x1] > 99) document.images[9 * y1 + x1].src = "images/mine.jpg"
+                                           
+                        else document.images[9 * y1 + x1].src = "images/" + massiv1[9 * y1 + x1] + ".jpg";                         
+                }
+                
+               
+                           
+                //Функция выбора клетки игроком (клик)
+                function Move(x1, y1)
+                {
+                    
+                    if (massiv1[9 * y1 + x1] > 99)
+                    {
+                        Draw(x1, y1);
+                        setTimeout('alert("You lose! 0_o")', 100);
+                        setTimeout('NewGame()', 300);
+                    }
+                    else
+                    {
+                        if (massiv2[9 * y1 + x1] == 0)
+                        {
+                         
+                            massiv2[9 * y1 + x1] = 1;
+                            Number++;
+                            Draw(x1, y1);
+                            
+                            if (Number == 68)   GameWin();
+                            
+                            if (massiv1[9 * y1 + x1] == 0)  FindEmpty(x1, y1);
+                            
+                            
+                        }
+                        
+                    }
+                       
+                }
+                
+                //устанавливаем флажки правой кнопкой мыши (не работает =( ))
+                function flag(x1, y1)
+                {
+                    // и так не работает:
+                    //document.images[9 * y + x].src = "images/flag.jpg";
+                    
+                    //и так не работает
+                    /* if (document.images[9 * y1 + x1].src == "images/field.jpg") document.images[9 * y1 + x1].src = "images/flag.jpg";
+                            
+                            else
+                            {
+                                if (document.images[9 * y1 + x1].src == "images/flag.jpg") document.images[9 * y1 + x1].src = "images/field.jpg";
+                            }*/
+                    
+                     return false; //убираем вызов контекстного меню при нажатии правой кнопки мыши - тоже не работает)
+                            
+                }
+                
+                
+               
+                
+                
+                //Функция для поиска пустоты
+                function FindEmpty(x1, y1)
+                {
+                    
+                    for (var column = x1 - 1; column <= x1 + 1; column++)
+                        for (var row = y1 - 1; row <= y1 + 1; row++)
+                        {
+                            
+                            if ( Number == 68 ) GameWin(); 
+                               
+                            
+                            if ( (column >= 0) && (column < 9) && (row >= 0) && (row < 9) && (massiv2[9 * row + column] == 0) )
+                            {
+                                
+                                if ( (column == x1 - 1) && (row == y1 - 1) && (massiv1[9 * (y1 - 1) + x1 - 1] == 0) ) continue;
+                                if ( (column == x1 + 1) && (row == y1 - 1) && (massiv1[9 * (y1 - 1) + x1 + 1] == 0) ) continue;
+                                if ( (column == x1 + 1) && (row == y1 + 1) && (massiv1[9 * (y1 + 1) + x1 + 1] == 0) ) continue;
+                                if ( (column == x1 - 1) && (row == y1 + 1) && (massiv1[9 * (y1 + 1) + x1 - 1] == 0) ) continue;
+                                
+                                if (massiv1[9 * row + column] == 0)
+                                {
+                                    Draw(column, row);
+                                    Number++;
+                                    massiv2[9 * row + column] = 1;
+                                    FindEmpty(column, row);
+                                }
+                                else
+                                {
+                                    Number++;
+                                    massiv2[9 * row + column] = 1;
+                                    Draw(column, row);
+                                }
+                                
+                                
+                            }
+                            
+                            
+                        }
+                    
+                }
+                
+                
+                
+                //Функция для обработки выигрыша 
+                function GameWin()
+                {
+                    
+                    for (x = 0; x <= 8; x++)
+                        for(y = 0; y <= 8; y++)
+                        
+                            if (massiv1[9 * y + x] > 99)
+                                    
+                                        document.images[9 * y + x].src = "images/flag.jpg";
+                                        
+                                        setTimeout('alert("YOU WiN!!!")', 1200);
+                    
+                }
+                
+       
+    </script>
+    
+</body>
+
+</html>
