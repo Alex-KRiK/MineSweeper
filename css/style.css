@@ -1,0 +1,28 @@
+<style type="text/css">
+        
+        table
+        {
+            border: 2px solid black;
+            margin: auto;
+        }
+        div
+        {
+            text-align: center;
+        }
+       
+        td
+        {
+           border: 1px solid black; 
+        }
+        
+        img
+        {
+            vertical-align: bottom;
+        }
+        
+        .marked-cell
+        {
+            background: url('images/flag.jpg');
+        }
+               
+</style>
