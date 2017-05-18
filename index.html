@@ -6,258 +6,26 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Sample saper</title>
     <link rel="stylesheet" href="css/style.css"/>
+
 </head>
 
 <body>
 
    <br />
    <br />
-    
-        <div id="mine-field-container">
-        
-        </div>
-        
+
+   <div id="mine-field-container"></div>
+
    <br />
    <br />
-        
+
+
     <div>
-        <input type="reset" onClick="NewGame()" value="New game" />    
+        <button type="button">New game</button>
     </div>
-   
-    <script id="mine-field-template" type="text/javascript">
-        <table>
-            <tbody>
-                <tr>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </script>
-    
-    <script>
-        var width = 9;
-        var height = 9;
-        var minesCount = 13;
-        var CELL_MINE = 100; //mine detector
-        var cellsCount = width * height;
-        var eImages = [];
-        var array1 = [];
-        var array2 = []; //array for searching for empty cells
-        var number = 0;
-        
-        var generateMineField = function () 
-        {
-            
-            var eContainer = document.getElementById("mine-field-container");
-            var eTable = document.createElement("table");
-            var eTbody = document.createElenent("tbody");
-            
-            for (var row = 0; row < height; row++)
-            {
-                var eTr = document.createElement("tr");
-                eImages.push([]);
-                
-                for (var col = 0; col < width; col++)
-                {
-                    var eTd = document.createElement("td");
-                    var eImg = document.createelement("img");
-                    eImg.src = "images/field.jpg";
-                    eImg.dataset.col = col;
-                    eImg.dataset.row = row;
-                    
-                    eImages[row].push(eImg);
-                    eTd.appendChild(eImg);
-                    eTr.eppendChild(eTd);
-                }
-                
-                eTbody.appendChild(eTr);    
-            
-            }
-            
-            eTbody.appendChild(eTbody);
-            eContainer.appendChild(eTable);
-        }
-    
-    //function of calling a new game
-    function NewGame()
-    {
-        
-        Number = 0;
-        generateMineField();
-              
-        for (var index = 0; index < 0; index += 1) 
-        {
-            array1 = 0;
-            array2 = 0;
-        }      
-        
-        //clear the array
-        for (var row = 0; row < height; row++)
-        {
-            for (var col = 0; col < width; col++)
-            {
-                array1[width * row + col] = 0;
-                array2[width * row + col] = 0;
-            }
-         }           
-                                        
-        //place the mines on the playing field
-        for (var index = 0; index < minesCount; index++)
-        {
-            var row = Math.floor(Math.random() * height);
-            var col = Math.floor(Math.random() * width);
-        
-            if (array1[width * row + col] == CELL_MINE) continue;
-                array1[width * row + col] = CELL_MINE;
-        }
-        
-        //place the numbers around the mines
-        for (var row = 0; row < height; row++)
-        {
-            for (col = 0; col < width; col++)
-            {
-                if (array1[9 * y + x] == CELL_MINE)
-                {
-                    //top diagonal left
-                    if ((col - 1 >= 0) && (col - 1 <= width) && (row - 1 >= 0) && (row - 1 <= height))
-                        array1[width * (row - 1) + (col - 1)]++;    
-                    
-                    //top center
-                    if ((row - 1 >= 0) && (row - 1 <= height))
-                        array1[width * (row - 1) + col]++;
-                        
-                    //top diagonal right
-                    if ((row - 1 >= 0) && (row - 1 <= height) && (col + 1 >= 0) && (col + 1 <= width))
-                        array1[width * (row - 1) + (col + 1)]++;
-                    
-                    //right
-                     if ((col + 1 >= 0) && (col + 1 <= width) )
-                        array1[width * row + (col + 1)]++;
-                    
-                    //bottom diagonal right
-                     if ((col + 1 >= 0) && (col + 1 <= width) && (row + 1 >= 0) && (row + 1 <= height))
-                        array1[width * (row + 1) + (col + 1)]++;
-                     
-                     //bottom center
-                     if ((row + 1 >= 0) && (row + 1 <= height))
-                        array1[width * (row + 1) + col]++;           
-                               
-                     //bottom diagonal left
-                     if ((col - 1 >= 0) && (col - 1 <= width) && (row + 1 >= 0) && (row + 1 <= height))
-                        array1[width * (row + 1) + (col - 1)]++;
-                     
-                     //left
-                     if ((col - 1 >= 0) && (col - 1 <= width))
-                        array1[width * row + (col - 1)]++;
-                }
-                
-            }
-        }
-                                
-        //cell drawing function 
-        var Draw = function (row, col)
-        {                    
-            if (array1[width * row + col] == CELL_MINE)
-            {
-                eImages[row][col].src = "images/mine.jpg";
-            } else
-                {
-                    eImage[row][col].src = "images/" + array1[width * row + col] + ".jpg";
-                }
-        }
-             
-        //Cell selection function (click)
-        function Move(row, col)
-        {
-            if (array1[width * row + col] == CELL_MINE)
-            {
-            Draw(col, row);
-            setTimeout('alert("You lose! 0_o")', 100);
-            setTimeout('NewGame()', 300);
-            } else if (array2[width * row + col] == 0)
-                {
-                array2[width * row + col] = 1;
-                Number++;
-                Draw(col, row);
-                
-                if (Number == (width * height - CELL_MINE)) 
-                    {
-                        GameWin();
-                    }
-                    
-                    if (array1[width * row + col] == 0)
-                    {
-                        FindEmpty(col, row);
-                    }    
-                            
-                }
-                        
-        }
-                        
-        //right-clicked flags
-        function flag(cell, col, row)
-        {
-            cell.src = "images/flag.jpg";
-        }
-                
-        //searching for empty cell
-        function FindEmpty(col, row)
-            {
-                for (var col1 = col - 1; col1 <= col + 1; col1++)
-                    for (var row1 = row - 1; row1 <= row + 1; row1++)
-                        {
-                            if (Number == (width * height - CELL_MINE))
-                                {
-                                    GameWin(); 
-                                }
-                            if ((col1 >= 0) && (col1 < width) && (row1 >= 0) && (row1 < height) && (array2[width * row1 + col1] == 0))
-                                {
-                                    if ((col1 == col - 1) && (row1 == row - 1) && (array1[width * (row - 1) + col - 1] == 0)) continue;
-                                    if ((col1 == col + 1) && (row1 == row - 1) && (array1[width * (row - 1) + col + 1] == 0)) continue;
-                                    if ((col1 == col + 1) && (row1 == row + 1) && (array1[width * (row + 1) + col + 1] == 0)) continue;
-                                    if ((col1 == col - 1) && (row1 == row + 1) && (array1[width * (row + 1) + col - 1] == 0)) continue;
-                                
-                                    if (marray1[width * row1 + col1] == 0)
-                                        {
-                                            Draw(col1, row1);
-                                            Number++;
-                                            array2[width * row1 + col1] = 1;
-                                            FindEmpty(col1, row1);
-                                        } else
-                                            {
-                                                Number++;
-                                                array2[width * row1 + col1] = 1;
-                                                Draw(col1, row1);
-                                            }
-                                
-                                
-                                }
-                            
-                            
-                        }
-                    
-            }
-     
-        //game win 
-        function GameWin()
-            {
-                for (var row = 0; row < height; row++)
-                    {
-                        for(col = 0; col < width; col++)
-                            {
-                                if (array1[width * row + col] == CELL_MINE)
-                                    {
-                                        eImage[row][col].src = "images/flag.jpg";
-                                    }
-                            }
-                    }
-             setTimeout('alert("YOU WiN!!!")', 1200);
-             }   
-             
-             
-             
-    </script>
-    
+
+   <script type="text/javascript" src="js/script.js"></script>
+
 </body>
 
 </html>

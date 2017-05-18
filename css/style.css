@@ -1,5 +1,4 @@
-<style type="text/css">
-        
+
         table
         {
             border: 2px solid black;
@@ -12,17 +11,10 @@
        
         td
         {
-           border: 1px solid black; 
+           border: 1px solid black;
         }
         
         img
         {
             vertical-align: bottom;
         }
-        
-        .marked-cell
-        {
-            background: url('images/flag.jpg');
-        }
-               
-</style>
