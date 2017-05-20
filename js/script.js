@@ -45,7 +45,7 @@ eButton.addEventListener("click", function () {
 for (row = 0; row < height; row++) {
     arrayFieldNumbers[row] = [];
     for (col = 0; col < width; col++) {
-        arrayFieldNumbers[row][col] = { number: 0, mine: false };
+        arrayFieldNumbers[row][col] = { number: 0, mine: false, flag: false };
     }
 }
 
@@ -108,39 +108,26 @@ for (row = 0; row < height; row++) {
         eImgCell = eImages[row][col];
 
         eImgCell.addEventListener("contextmenu", function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        if (flagCount < minesCount) {
+            event.preventDefault();
+            event.stopPropagation();
             var element = event.target;
-            element.src = "images/flag.jpg";
-            flagCount++;
+            var col = parseInt(element.dataset.col);
+            var row = parseInt(element.dataset.row);
 
-            //пытаюсь сделать чтобы райт-клик по флажку опять поле пустое на его месте прорисовывал.
-            //eImages[row][col] = element; //Uncaught TypeError: Cannot set property '9' of undefined at HTMLImageElement.<anonymous>
-
+            if ((flagCount < minesCount) && !arrayFieldNumbers[row][col].flag) {
+                arrayFieldNumbers[row][col].flag = true;
+                element.src = "images/flag.jpg";
+                flagCount++;
+            } else if ((flagCount <= minesCount) && arrayFieldNumbers[row][col].flag) {
+                arrayFieldNumbers[row][col].flag = false;
+                element.src = "images/field.jpg";
+                flagCount--;
             } else {
-                alert('Число отмеченных клеток не должно превышать количества бомб на игровом поле (' + minesCount + ')');
+                alert("Число отмеченных флажками клеток не должно превышать количества бомб на игровом поле (" + minesCount + ")");
             }
         });
     }
 }
-
-/*//right-clicked delete flag, paste field - no working
-for (row = 0; row < height; row++) {
-    for (col = 0; col < width; col++) {
-        var eImgCell2 = eImages[row][col];
-
-        eImgCell.addEventListener("contextmenu", function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        var element = event.target;
-        element.src = "images/field.jpg";
-        flagCount--;
-        });
-    }
-}*/
 
 //Cell selection (click)
 var click = function (row, col) {
