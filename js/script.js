@@ -45,7 +45,7 @@ eButton.addEventListener("click", function () {
 for (row = 0; row < height; row++) {
     arrayFieldNumbers[row] = [];
     for (col = 0; col < width; col++) {
-        arrayFieldNumbers[row][col] = { number: 0, mine: false, flag: false };
+        arrayFieldNumbers[row][col] = { number: 0, opened: false, mine: false, flag: false };
     }
 }
 
@@ -140,15 +140,15 @@ var click = function (row, col) {
         arrayFieldNumbers[row][col].opened = true;
         emptyCellsCount++;
 
-        if (emptyCellsCount === (width * height - CELL_MINE)) {
-            GameWin();
+        if (emptyCellsCount === (width * height - minesCount)) {
+            gameWin();
         }
 
         if (arrayFieldNumbers[row][col].number === 0) {
             findEmpty(row, col);
         }
     }
-}
+};
 
 for (row = 0; row < height; row++) {
     for (col = 0; col < width; col++) {
@@ -170,10 +170,8 @@ for (row = 0; row < height; row++) {
 //searching and opening for empty cell
 var findEmpty = function (row, col) {
 
-    arrayFieldNumbers[row][col].opened = true;
-
-    if (emptyCellsCount === (width * height - CELL_MINE)) {
-        GameWin();
+    if (emptyCellsCount === (width * height - minesCount)) {
+        gameWin();
     }
 
     //check top diagonal left cell
@@ -188,6 +186,7 @@ var findEmpty = function (row, col) {
     //check top cell
     if ((row > 0) && (arrayFieldNumbers[row - 1][col].opened != true)) {
         eImages[row - 1][col].src = "images/" + arrayFieldNumbers[row - 1][col].number + ".jpg";
+        arrayFieldNumbers[row - 1][col].opened = true;
         emptyCellsCount++;
         if (arrayFieldNumbers[row - 1][col].number === 0) {
             findEmpty(row - 1, col);
@@ -196,6 +195,7 @@ var findEmpty = function (row, col) {
     //check top diagonal right cell
     if ((row > 0) && (col < width - 1) && (arrayFieldNumbers[row - 1][col + 1].opened != true)) {
         eImages[row - 1][col + 1].src = "images/" + arrayFieldNumbers[row - 1][col + 1].number + ".jpg";
+        arrayFieldNumbers[row - 1][col + 1].opened = true;
         emptyCellsCount++;
         if (arrayFieldNumbers[row - 1][col + 1].number === 0) {
             findEmpty(row - 1, col + 1);
@@ -204,6 +204,7 @@ var findEmpty = function (row, col) {
     //check right cell
     if ((col < width - 1) && (arrayFieldNumbers[row][col + 1].opened != true)) {
         eImages[row][col + 1].src = "images/" + arrayFieldNumbers[row][col + 1].number + ".jpg";
+        arrayFieldNumbers[row][col + 1].opened = true;
         emptyCellsCount++;
         if (arrayFieldNumbers[row][col + 1].number === 0) {
             findEmpty(row, col + 1);
@@ -212,6 +213,7 @@ var findEmpty = function (row, col) {
     //check bottom diagonal right cell
     if ((row < height - 1) && (col < width - 1) && (arrayFieldNumbers[row + 1][col + 1].opened != true)) {
         eImages[row + 1][col + 1].src = "images/" + arrayFieldNumbers[row + 1][col + 1].number + ".jpg";
+        arrayFieldNumbers[row + 1][col + 1].opened = true;
         emptyCellsCount++;
         if (arrayFieldNumbers[row + 1][col + 1].number === 0) {
             findEmpty(row + 1, col + 1);
@@ -220,6 +222,7 @@ var findEmpty = function (row, col) {
     //check bottom cell
     if ((row < height - 1) && (arrayFieldNumbers[row + 1][col].opened != true)) {
         eImages[row + 1][col].src = "images/" + arrayFieldNumbers[row + 1][col].number + ".jpg";
+        arrayFieldNumbers[row + 1][col].opened = true;
         emptyCellsCount++;
         if (arrayFieldNumbers[row + 1][col].number === 0) {
             findEmpty(row + 1, col);
@@ -228,6 +231,7 @@ var findEmpty = function (row, col) {
     //check bottom diagonal left cell
     if ((row < height - 1) && (col > 0) && (arrayFieldNumbers[row + 1][col - 1].opened != true)) {
         eImages[row + 1][col - 1].src = "images/" + arrayFieldNumbers[row + 1][col - 1].number + ".jpg";
+        arrayFieldNumbers[row + 1][col - 1].opened = true;
         emptyCellsCount++;
         if (arrayFieldNumbers[row + 1][col - 1].number === 0) {
             findEmpty(row + 1, col - 1);
@@ -236,11 +240,24 @@ var findEmpty = function (row, col) {
     //check left cell
     if ((col > 0) && (arrayFieldNumbers[row][col - 1].opened != true)) {
         eImages[row][col - 1].src = "images/" + arrayFieldNumbers[row][col - 1].number + ".jpg";
+        arrayFieldNumbers[row][col - 1].opened = true;
         emptyCellsCount++;
         if (arrayFieldNumbers[row][col - 1].number === 0) {
             findEmpty(row, col - 1);
         }
     }
+};
+
+var gameWin = function () {
+    for (row = 0; row < width; row++) {
+        for (col = 0; col < height; col++) {
+            if (arrayFieldNumbers[row][col].mine) {
+                eImages[row][col].src = "images/flag.jpg";
+            }
+        }
+    }
+
+   setTimeout('alert("Congratulations! You WiN! ;)")', 1000);
 };
 
 
