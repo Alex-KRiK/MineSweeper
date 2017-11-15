@@ -1,4 +1,4 @@
-h2 MineSweeper
+<h2>MineSweeper</h2>
 <hr>
 A MineSweeper game written in JavaScript, HTML and CSS.
 
