@@ -5,6 +5,6 @@ A MineSweeper game written in JavaScript, HTML and CSS.
 Left click to step on a spot. Right click to mark a spot as a bomb.
 
 <h2>Demo</h2>
-[MineSweeper]:https://alex-krik.github.io/MineSweeper
+[MineSweeper](https://alex-krik.github.io/MineSweeper)
 
 
