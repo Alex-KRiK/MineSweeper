@@ -8,3 +8,4 @@ Left click to step on a spot. Right click to mark a spot as a bomb.
 https://alex-krik.github.io/MineSweeper
 
 
+![demo-png](https://user-images.githubusercontent.com/26335532/34997515-5732ad7c-fae5-11e7-8876-ae1c2aa2ef25.png)
